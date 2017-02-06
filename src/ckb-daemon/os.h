@@ -68,7 +68,9 @@ extern pthread_mutex_t _euid_guard;
 
 void *memrchr(const void *s, int c, size_t n);
 
+#if !defined(CLOCK_MONOTONIC)
 #define CLOCK_MONOTONIC 1
+#endif
 #define TIMER_ABSTIME   1
 #if __MAC_OS_X_VERSION_MAX_ALLOWED < 101200
 typedef int clockid_t;
